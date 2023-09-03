@@ -9,15 +9,15 @@
 
 1. Homework 1
 
-- use `fetch` to fetch product data use this url: `https://fakestoreapi.com/products` in the `ProductList` component
+- use `fetch` to fetch product data, use this url: `https://fakestoreapi.com/products` in the `ProductList` component
 - display the product title, price, image and description
 
 2. Homework 2
 
-- use `axios` to fetch country data use this url: `https://restcountries.com/v3.1/all`
+- use `axios` to fetch country data, use this url: `https://restcountries.com/v3.1/all`
 - Only display 20 countries on the screen
 - Each country must have name, region, google map link, image and borders
-- When the user click the Visit map here it should go to a google map page as screenshot below
+- When the user clicks the Visit map here, it should go to a google map page, like in the screenshot below
 
 ## Screenshots
 
@@ -25,6 +25,6 @@
 
 ![](./screenshots/countryList.png)
 
-When the user click the Visit map here it should go to a google map page as screenshot below
+When the user click the Visit map here it should go to a google map page, like in the screenshot below
 
 ![](./screenshots/googleMaps.png)
