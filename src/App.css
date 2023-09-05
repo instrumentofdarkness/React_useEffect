@@ -1,3 +1,12 @@
 .App {
   text-align: center;
 }
+
+/* put each of the data in separate flexbox */
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
