@@ -1,9 +1,9 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 import ProductList from "./components/product/ProductList";
 import CountryList from "./components/country/CountryList";
-import axios from "axios";
 
 const productsUrl = "https://fakestoreapi.com/products";
 const countriesUrl = "https://restcountries.eu/rest/v3.1/all";
@@ -36,6 +36,12 @@ function App() {
   useEffect(() => {
     getCountries();
   }, []);
+
+  const twentyCountries = countries.slice(0, 20);
+  // display 20 countries instead of all countries
+  const displayCountries = twentyCountries.map((country) => (
+    <CountryList key={country.name} country={country} />
+  ));
 
   if (isLoading) {
     return <div>Loading...</div>;
