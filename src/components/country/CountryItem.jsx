@@ -1,15 +1,15 @@
 import React from "react";
 
-export default function CountryItem({ item }) {
+export default function CountryItem({ country }) {
   return (
     <div>
-      <h1>{item.name.common}</h1>
-      <img src={item.flag} alt={item.name} />
-      <p>{item.capital}</p>
-      <p>{item.region}</p>
-      <p>{item.subregion}</p>
-      <p>{item.population}</p>
-      <a href={item.maps.googleMaps} target="_blank"
+      <h1>{country.name.common}</h1>
+      <img src={country.flags.png} alt={country.name.common} />
+      <p>{country.capital}</p>
+      <p>{country.region}</p>
+      <p>{country.subregion}</p>
+      <p>{country.population}</p>
+      <a href={country.maps.googleMaps} target="_blank" rel="noreferrer"
       >view in Google Maps</a>
     </div>
   );

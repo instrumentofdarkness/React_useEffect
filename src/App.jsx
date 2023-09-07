@@ -6,7 +6,7 @@ import ProductList from "./components/product/ProductList";
 import CountryList from "./components/country/CountryList";
 
 const productsUrl = "https://fakestoreapi.com/products";
-const countriesUrl = "https://restcountries.eu/rest/v3.1/all";
+const countriesUrl = "https://restcountries.com/v3.1/all";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -26,7 +26,7 @@ function App() {
   function getCountries() {
     axios
       .get(countriesUrl)
-      .then((response) => response.json())
+      .then((response) => response.data)
       .then((countries) => {
         setIsLoading(false);
         setCountries(countries);
@@ -36,23 +36,20 @@ function App() {
   useEffect(() => {
     getCountries();
   }, []);
-
+console.log (countries,"countries App")
   const twentyCountries = countries.slice(0, 20);
   // display 20 countries instead of all countries
-  const displayCountries = twentyCountries.map((country) => (
-    <CountryList key={country.name} country={country} />
-  ));
-
+  
   if (isLoading) {
     return <div>Loading...</div>;
   } else {
     return (
       <div className="App">
         <h1>Homework 1</h1>
-        <ProductList />
+        <ProductList products={products}/>
         <hr />
         <h1>Homework 2</h1>
-        <CountryList />
+        <CountryList countries={twentyCountries}/>
       </div>
     );
   }
