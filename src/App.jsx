@@ -47,11 +47,11 @@ console.log (countries,"countries App")
   } else {
     return (
       <div className="App">
-        <h1>Homework 1</h1>
+        <h1>PRODUCTS</h1>
         <ProductSearch products={products} />
         <ProductList products={products}/>
         <hr />
-        <h1>Homework 2</h1>
+        <h1>COUNTRIES</h1>
         <CountrySearch countries={twentyCountries} />
         <CountryList countries={twentyCountries}/>
       </div>
