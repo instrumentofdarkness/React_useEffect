@@ -3,7 +3,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import ProductList from "./components/product/ProductList";
+import ProductSearch from "./components/search/ProductSearch";
 import CountryList from "./components/country/CountryList";
+import CountrySearch from "./components/search/CountrySearch";
 
 const productsUrl = "https://fakestoreapi.com/products";
 const countriesUrl = "https://restcountries.com/v3.1/all";
@@ -46,9 +48,11 @@ console.log (countries,"countries App")
     return (
       <div className="App">
         <h1>Homework 1</h1>
+        <ProductSearch products={products} />
         <ProductList products={products}/>
         <hr />
         <h1>Homework 2</h1>
+        <CountrySearch countries={twentyCountries} />
         <CountryList countries={twentyCountries}/>
       </div>
     );
