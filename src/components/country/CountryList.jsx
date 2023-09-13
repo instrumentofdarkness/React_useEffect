@@ -1,13 +1,26 @@
 import React from "react";
 import CountryItem from "./CountryItem";
 
-export default function CountryList({ countries }) {
-  console.log(countries, "countries");
-  return (
-    <div className="countries">
-      {countries.map((country) => (
-        <CountryItem key={country.name.common} country={country} />
-      ))}
-    </div>
-  );
+export default function CountryList({
+  countries,
+  searchTerm,
+  filteredCountries,
+}) {
+  if (!searchTerm) {
+    return (
+      <div className="countries">
+        {countries.map((country) => {
+          return <CountryItem key={country.name.common} country={country} />;
+        })}
+      </div>
+    );
+  } else {
+    return (
+      <div className="countries">
+        {filteredCountries.map((country) => {
+          return <CountryItem key={country.name.common} country={country} />;
+        })}
+      </div>
+    );
+  }
 }

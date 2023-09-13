@@ -15,6 +15,12 @@ function App() {
   const [countries, setCountries] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filteredProducts = products.filter((product) => {
+    return product.title.toLowerCase().includes(searchTerm.toLowerCase());
+  });
+
   async function getProduct() {
     const response = await fetch(productsUrl);
     const data = await response.json();
@@ -24,6 +30,10 @@ function App() {
   useEffect(() => {
     getProduct();
   }, []);
+
+  const filteredCountries = countries.filter((country) => {
+    return country.name.common.toLowerCase().includes(searchTerm.toLowerCase());
+  });
 
   function getCountries() {
     axios
@@ -48,12 +58,20 @@ console.log (countries,"countries App")
     return (
       <div className="App">
         <h1>PRODUCTS</h1>
-        <ProductSearch products={products} />
-        <ProductList products={products}/>
+        <ProductSearch setSearchTerm={setSearchTerm} />
+        <ProductList
+          products={products}
+          searchTerm={searchTerm}
+          filteredProducts={filteredProducts}
+        />
         <hr />
         <h1>COUNTRIES</h1>
-        <CountrySearch countries={twentyCountries} />
-        <CountryList countries={twentyCountries}/>
+        <CountrySearch setSearchTerm={setSearchTerm} />
+        <CountryList
+          countries={twentyCountries}
+          searchTerm={searchTerm}
+          filteredCountries={filteredCountries}
+        />
       </div>
     );
   }
