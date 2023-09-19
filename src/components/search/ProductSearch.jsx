@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function SearchFormProduct({ onSearch }) {
+export default function ProductSearch({setSearchTerm}) {
   function handleSubmit(event) {
-    onSearch(event.target.value);
+    setSearchTerm(event.target.value);
   }
   return (
     <div>
@@ -15,8 +15,8 @@ export default function SearchFormProduct({ onSearch }) {
             name="search"
             onChange={handleSubmit}
           />
-          <span className="search"> </span>
-          <button type="submit">Search</button>
+          {/* <span className="search"> </span>
+          <button type="submit">Search</button> */}
         </label>
       </form>
     </div>

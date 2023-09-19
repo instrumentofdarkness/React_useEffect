@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function SearchFormCountry({ onSearch }) {
-    function handleSubmit(event) {
-      onSearch(event.target.value);
-    }
+export default function SearchFormCountry() {
+    // function handleSubmit(event) {
+    //   onSearch(event.target.value);
+    // }
     return (
       <div>
         <form>
@@ -13,7 +13,7 @@ export default function SearchFormCountry({ onSearch }) {
               type="text"
               placeholder="Search"
               name="search"
-              onChange={handleSubmit}
+              // onChange={handleSubmit}
             />
             <span className="search"> </span>
             <button type="submit">Search</button>

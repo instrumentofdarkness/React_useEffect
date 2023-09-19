@@ -16,7 +16,8 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   const [searchTerm, setSearchTerm] = useState("");
-
+  // change to searchTermProduct ...
+console.log(searchTerm, "searchTerm from App");
   const filteredProducts = products.filter((product) => {
     return product.title.toLowerCase().includes(searchTerm.toLowerCase());
   });
@@ -48,7 +49,7 @@ function App() {
   useEffect(() => {
     getCountries();
   }, []);
-console.log (countries,"countries App")
+
   const twentyCountries = countries.slice(0, 20);
   // display 20 countries instead of all countries
   
