@@ -15,8 +15,6 @@ export default function SearchFormCountry({ setSearchTerm }) {
             name="search"
             onChange={handleSubmit}
           />
-          <span className="search"> </span>
-          <button type="submit">Search</button>
         </label>
       </form>
     </div>
