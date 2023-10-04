@@ -25,6 +25,6 @@
 
 ![](./screenshots/countryList.png)
 
-When the user click the Visit map here it should go to a google map page, like in the screenshot below
+When the user clicks the Visit map here it should go to a google map page, like in the screenshot below
 
 ![](./screenshots/googleMaps.png)

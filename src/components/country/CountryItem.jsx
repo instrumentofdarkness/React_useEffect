@@ -9,9 +9,9 @@ export default function CountryItem({ country }) {
       <p>{country.region}</p>
       <p>{country.subregion}</p>
       <p>{country.population}</p>
-      <a href={country.maps.googleMaps} target="_blank" rel="noreferrer"
-      >view in Google Maps</a>
+      <a href={country.maps.googleMaps} target="_blank" rel="noreferrer">
+        view in Google Maps
+      </a>
     </div>
   );
 }
-
